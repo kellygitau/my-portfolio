@@ -41,8 +41,8 @@ Simply open the website in a web browser to navigate through the different secti
 ### Project 1: [Paul's Creations]
 
 - **Description:** A brief description of the project, its purpose, and the technologies used.
-- **Screenshot:** ![Project Screenshot]((https://www.pinterest.com/pin/1152288254643975467/))
-- **GitHub Repository:** ((https://github.com/kellygitau/pauls-creations.git))
+- **Screenshot:** ![https://www.pinterest.com/pin/1152288254643975467/]
+- **GitHub Repository:** (https://github.com/kellygitau/pauls-creations.git)
 - **Live Demo coming soon:** [Link to Live Demo](https://your-project-url.com)
 
 (Repeat this section for each of your projects)
@@ -52,8 +52,8 @@ Simply open the website in a web browser to navigate through the different secti
 Feel free to reach out to me if you have any questions, feedback, or collaboration opportunities. You can contact me through the following channels:
 
 - Email: [gitaukelly72@gmail.com]
-- LinkedIn: [My LinkedIn Profile]((https://www.linkedin.com/in/kelly-gitau-81658827b/))
-- GitHub: [My GitHub Profile]((https://github.com/kellygitau))
+- LinkedIn: [https://www.linkedin.com/in/kelly-gitau-81658827b/]
+- GitHub: [https://github.com/kellygitau]
 
 Thank you for visiting my portfolio website. I look forward to connecting with you and sharing more about my work as a developer!
 

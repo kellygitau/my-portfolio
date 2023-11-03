@@ -1,0 +1,1076 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #1e1122;
+    --background: #fdfcfd;
+    --primary: #473f24;
+    --secondary: #e6d7ea;
+    --accent: #1f3c36;
+    --padding: 1rem;
+    --margin: 10px;
+    --fontsize-body: 1rem;
+    --fontsize-heading: 2.5rem;
+    --fontsize-cta: 2rem;
+    --fontweight-header: 800;
+    --fontweight-body: 400;
+    --width-body: 100vw;
+    --height-body: 100vh;
+    --fontfamily: 'Arima Madurai';
+    --animation-duration: 350ms;
+    --scroll: 0;
+    --border_image: linear-gradient(var(--text), var(--secondary));
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #fdfcfd;
+        --background: #1e1122;
+        --primary: #473f24;
+        --secondary: #180e1b;
+        --accent: #53a191;
+    }
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    position: relative;
+    width: var(--width-body);
+    height: var(--height-body);
+    overflow-x: hidden;
+    scroll-snap-align: start;
+    background: var(--background);
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--background);
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: var(--accent);
+    border-radius: 100vw;
+}
+
+.navbar {
+    width: 100vw;
+    height: 3rem;
+    background-color: var(--secondary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+}
+
+.mode-toggle{
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    transform: translateY(-20%);
+}
+
+.mode-toggle svg {
+    width: 1rem;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.mode-toggle:active {
+    --text: #ffffff;
+    --background: #05000a;
+    --primary: #fab76b;
+    --secondary: #10011e;
+    --accent: #08e27d;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+}
+
+.logo a p {
+    position: absolute;
+    top: .5rem;
+    left: 3rem;
+    text-decoration: none;
+    font-size: var(--fontsize-cta);
+    font-weight: var(--fontweight-header);
+    font-family: var(--fontfamily);
+    animation: textcolor 45s ease infinite;
+    animation-direction: normal;
+}
+
+.logo img {
+    top: 0;
+    left: 0;
+    padding-inline-start: var(--padding);
+}
+
+.links {
+    position: absolute;
+    display: grid;
+    width: 45vw;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 5);
+    top: var(--padding);
+    right: 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text);
+    right: 0;
+}
+
+.links a:hover {
+    --fontsize_hover: 1.1rem;
+    color: var(--accent);
+    font-size: var(--fontsize_hover);
+    transition: all 350ms ease-in-out;
+}
+
+.links a img {
+    width: var(--fontsize-cta);
+}
+
+
+section {
+    scroll-snap-align: start;
+    transition: all 750ms step-end;
+    scroll-padding-top: 4rem;
+    
+}
+
+.page-1 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.page-1 svg {
+    position: absolute;
+    right: 0;
+}
+
+#info span:nth-of-type(1) {
+    font-weight: var(--fontweight-header);
+    animation: textcolor 25s ease infinite  alternate forwards;
+}
+
+@keyframes textcolor {
+    0% {
+        color: var(--accent);
+    }
+    25% {
+        color: #eb1d62;
+    }
+    50% {
+        color: var(--primary);
+    }
+    75% {
+        color: #e60ca1;
+    }
+    100% {
+        color: #e43f5d;
+    }
+}
+
+    section {
+        scroll-padding-top: 3rem;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--background);
+        color: var(--text);
+        position: relative;
+    }
+
+.cta {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 60ch;
+    height: 40vh;
+}
+
+.profile_pic {
+    position: absolute;
+    top: 4rem;
+    left: var(--padding);
+    width: 350px;
+    height: 350px;
+    background-color: var(--text);
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.profile_pic img {
+    border-radius: .5rem;
+}
+
+.cta p {
+    position: relative;
+    display: grid;
+    font-size: var(--fontsize-cta);
+    letter-spacing: 1px;
+    padding-bottom: var(--padding);
+}
+
+.cta p span {
+    padding: calc(var(--padding) / 2);
+}
+
+.page-2 {
+    scroll-padding-top: 3.2rem;
+}
+
+.personal_info h2 {
+    position: absolute;
+    font-size: calc(var(--fontsize-heading) / 1.5);
+    color: var(--text);
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text {
+    width: 35ch;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.text p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: var(--padding);
+}
+
+.page-2 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    aspect-ratio: 1;
+    opacity: .15;
+}
+
+.page-2 h1,
+.page-3 h1 {
+    position: relative;
+    font-family: var(--fontfamily);
+    font-size: calc(var(--fontsize-heading) / 2);
+    font-weight: var(--fontweight-header);
+    letter-spacing: -5%;
+    padding-left: var(--padding);
+}
+
+.laptop_container:nth-of-type(1) {
+    --container-width: 35vw;
+    --container-height: 45vh;
+    --laptop-padding: .75rem;
+    width: var(--container-width);
+    height: var(--container-height);
+    position: absolute;
+    top: calc(var(--padding) * 3);
+    left: var(--padding);
+}
+
+.laptop_cover {
+    --laptop-bevel: .75rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius:  var(--laptop-bevel) var(--laptop-bevel) 0 0;
+}
+
+.laptop_screen {
+    --screen_width: calc(var(--container-width) - 1rem);
+    --screen_height: calc(var(--container-height) - 2rem);
+    width: var(--screen_width);
+    height: var(--screen_height);
+    background: bisque;
+    position: relative;
+    top: 1.5rem;
+    left: .5rem;
+    overflow: hidden;
+}
+
+.laptop_screen img {
+    width: var(--screen_width);
+    height: var(--screen_height);
+    position: absolute;
+}
+
+.phone_cover {
+    --phone_width: 12vw;
+    --phone_height: 40vh;
+    --phone_bevel: .45rem;
+    width: var(--phone_width);
+    height: var(--phone_height);
+    position: absolute;
+    left: 95%;
+    top: 60%;
+    z-index: 1000;
+    background-color: black;
+    border-radius: var(--phone_bevel);
+}
+
+.phone_screen {
+    --phone-screen_height: calc(var(--phone_height) - 5px);
+    --phone-screen_width: calc(var(--phone_width) - 5px);
+    width: var(--phone-screen_width);
+    height: var(--phone-screen_height);
+    position: relative;
+    background-color: bisque;
+    top: 2.5px;
+    left: 2.5px;
+    border-radius: var(--phone_bevel);
+    display: flex;
+    overflow: hidden;
+}
+
+.phone_screen img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border: none;
+    position: absolute;
+    border-radius: 0 0 var(--phone_bevel) var(--phone_bevel);
+    transition: transform 1s ease;
+}
+
+.camera_lens {
+    width: .6rem;
+    height: .5rem;
+    border-radius: 0 0 .25rem .25rem;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.camera {
+    width: 50%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: grey;
+}
+
+.phone_nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 3);
+    background-color: rgba( 0, 0, 0, .25);
+    contain: content;
+}
+
+.phone_nav img {
+    width: .75rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: .125rem;
+}
+
+.phone_nav img:nth-of-type(1) {
+    left: var(--padding);
+}
+
+.phone_nav img:nth-of-type(2) {
+    right: var(--padding);
+}
+
+.home-button {
+    width: 0.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: .125rem;
+    transform: translateX(-50%);
+    border: 1px s0lid black;
+    background-color: whitesmoke;
+}
+
+.laptop_container:nth-of-type(2) {
+    --container-width: 40vw;
+    --container-height: 50vh;
+    --laptop-padding: .75rem;
+    width: var(--container-width);
+    height: var(--container-height);
+    position: absolute;
+    top: 10%;
+    right: var(--padding);
+}
+
+.phone2 {
+    --phone_width: 12vw;
+    --phone_height: 40vh;
+    --phone_bevel: .45rem;
+    width: var(--phone_width);
+    height: var(--phone_height);
+    position: absolute;
+    right: 95%;
+    top: 75%;
+    z-index: 1000;
+    background-color: black;
+    border-radius: var(--phone_bevel);
+    overflow: hidden;
+}
+
+.phone2 > .phone_screen {
+    overflow: hidden;
+    border: none;
+}
+
+.project_description {
+    position: absolute;
+    bottom: -90%;
+    display: grid;
+    place-content: center;
+}
+
+.laptop2 .project_description {
+    position: absolute;
+    bottom: -80%;
+    right: 0;
+    display: grid;
+    place-content: center;
+}
+
+.project_description h1 {
+    font-size: var(--fontsize-heading);
+    font-weight: var(--fontweight-header);
+    font-family: var(--fontfamily);
+    color: var(--text);
+    padding: var(--padding);
+    position: relative;
+    letter-spacing: -15%;
+}
+
+.project_description p {
+    position: relative;
+    font-size: var(--fontsize-body);
+    font-weight: var(--fontweight-body);
+    font-family: var(--fontfamily);
+    width: 45ch;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+.phone2 .phone_nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 3);
+    background-color: rgba(159, 153, 153, .25);
+    contain: content;
+    z-index: 10000;
+}
+
+.phone2 > .phone_nav img {
+    width: .75rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: .125rem;
+}
+
+.phone2 > .phone_nav img:nth-of-type(1) {
+    left: var(--padding);
+}
+
+.phone2 .phone_nav img:nth-of-type(2) {
+    right: var(--padding);
+}
+
+.phone2 > .home-button {
+    width: 0.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: .125rem;
+    transform: translateX(-50%);
+    border: 1px s0lid black;
+    background-color: whitesmoke;
+}
+
+.personal_info {
+    position: relative;
+    display: grid;
+}
+
+.personal_info h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--fontsize-cta);
+    font-family: var(--fontfamily);
+    font-weight: var(--fontweight-header);
+    padding: var(--padding);
+    letter-spacing: -15%;
+}
+
+.personal_info p {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--padding);
+    width: 75ch;
+    font-size: calc(var(--fontsize-cta) / 1.75);
+    font-family: var(--fontfamily);
+    font-weight: calc(var(--fontweight-body)* 1.25);
+    letter-spacing: -10%;
+}
+
+.skills {
+    position: absolute;
+    bottom: var(--padding);
+    left: 50%;
+    transform: translateX(-40%);
+    width: 65vw;
+    height: 50vh;
+    padding-inline: var(--padding);
+}
+
+.skills ul {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 25%;
+    font-size: var(--fontsize-body);
+    font-family: var(--fontfamily);
+    font-weight: calc(var(--fontweight-body) / .5);
+    list-style-type: disc;
+}
+
+.skills h1 {
+    position: absolute;
+    top: -30%;
+    left: 25%;
+    text-decoration: underline;
+    padding: var(--padding);
+    letter-spacing: 2px;
+    font-size: var(--fontsize-heading);
+}
+
+.wrapper {
+    width: 75vw;
+    display: grid;
+    position: absolute;
+    background-color: var(--background);
+    grid-auto-flow: column;
+    overflow: hidden;
+    column-gap: calc(var(--padding) / 1.5);
+    border-radius: .5rem;
+}
+
+.personal_projects h2 {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: underline;
+}
+
+.frontend_projects {
+    height: 40vh;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-auto-columns: calc((100% / 3) - 10px);
+}
+
+.backend_projects {
+    width: 50Vw;
+    height: 40vh;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(50vh - 1.5rem);
+    padding-bottom: var(--padding);
+    grid-template-columns: calc(50% - 1rem) calc(50% - 1rem);
+}
+
+.html_css,
+.js,
+.figma,
+.python,
+.cloud_computing {
+    position: relative;
+    background-color: var(--secondary);
+    display: grid;
+    border-radius: .25rem;
+    border: 1px solid var(--text);
+}
+
+.html_css:hover {
+    animation: coolhover 1500ms forwards steps(5);
+    cursor: pointer;
+}
+
+.projects {
+    height: 10%;
+    width: 50%;
+    border-radius: .25rem;
+    background-color: var(--background);
+    color: var(--text);
+    font-size: var(--fontsize-body);
+    font-weight: var(--fontweight-body);
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.language_icon {
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--background);
+}
+
+.language_icon svg {
+    position: absolute;
+    top: calc(var(--padding) / 2);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    opacity: 1;
+}
+.cloud_computing svg{
+    top: 2px;
+}
+
+@media Screen and (width < 600px) {
+    .navbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+    .page-1,
+    .page-2,
+    .page-3 {
+        width: 100vw;
+        height: 100vh;
+        scroll-padding-top: 3rem;
+    }
+    .logo {
+        position: absolute;
+        left: 0;
+    }
+    .logo a p {
+        display: none;
+    }
+    .links {
+        position: absolute;
+        right: 0;
+    }
+    .links a p {
+        display: none;
+        width: var(--fontsize_hover);
+    }
+    .links a svg {
+        display: flex;
+    }
+    .page-1 svg {
+        width: 100%;
+        height: 100%;
+        opacity: .35;
+    }
+    .profile_pic {
+        display: none;
+    }
+    .cta {
+        top: 50%;
+        left: 0;
+        width: 45ch;
+        transform: translateY(-50%);
+    }
+    .page-1 svg,
+    .personal_info {
+        width: 100%;
+        height: 50%;
+        top: 3rem;
+        left: 0;
+    }
+
+    .personal_info h2 {
+        display: block;
+        font-size: var(--fontsize-body);
+        font-weight: var(--fontweight-header);
+        width: 40ch;
+        position: absolute;
+        top: 0;
+        padding: var(--padding);
+    }
+    .personal_info p {
+        width: 40ch;
+        position: absolute;
+        top: 3rem;
+        font-size: var(--fontsize-body);
+    }
+    .skills {
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        bottom: 0;
+        left: 50%;
+        display: grid;
+        padding-inline-start: var(--padding);
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 25% 25% 25%;
+        font-size: var(--fontsize-body);
+    }
+    .skills ul,
+    .skills h1 {
+        padding-inline-start: var(--padding);
+    }
+    section:nth-of-type(3) {
+        display: none;
+    }
+    .html_css,
+    .js,
+    .figma,
+    .python,
+    .cloud_computing{
+        border: none;
+    }
+    .python svg,
+    .cloud_computing svg {
+        top: -30%;
+        z-index: 1;
+        }
+    .language_icon {
+        background-color: var(--background);
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+    .language_icon svg {
+       top: 30%;
+   }
+    .text, 
+    .projects {
+        display: none;
+    }
+    .contacts {
+        width: calc(100% - 2rem);
+        height: 100%;
+        z-index: 100;
+        background: var(--bg);
+    }
+
+    .input {
+        position: absolute;
+        top: 20%;
+        background: var(--bg);
+        width: calc(100% - 10px);
+        height: 50%;
+        padding-top: 0px;
+        transform: translateY(-30%);
+    }
+
+    .h1 {
+        padding: 10px;
+        height: 10%;
+    }
+}
+
+#contacts {
+    bottom: 0;
+}
+
+.contacts {
+    display: grid;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+#wrapper {
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+}
+
+.pc_info {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+
+}
+.pc_info p,
+.pc_info a,
+.pc_info h2 {
+    position: relative;
+    padding-inline: var(--padding);
+    padding-block-end: calc(var(--padding) / 2);
+}
+
+.pc_info h2 {
+    text-decoration: underline;
+}
+
+.pc_info a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.pc_info i {
+    color: var(--accent);
+    padding-inline-end: var(--padding);
+}
+
+.h1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 2rem;
+    color: var(--text);
+}
+
+.h1 p {
+    position: absolute;
+    font-size: 1.2rem;
+    padding-top: var(--padding);
+    color: var(--text);
+}
+
+.input {
+    display: grid;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: calc(var(--padding) * 2);
+    margin: var(--margin);
+    width: 100%;
+    height: 60%;
+    background: var(--primary);
+    border-radius: var(--padding);
+}
+
+textarea,   
+input {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: 2rem;
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-bottom: 1px solid var(--text);
+    border-right: 1px solid var(--text);
+}
+
+.input button {
+    text-transform: uppercase;
+    background-color: var(--btnsecondary);
+    color: var(--text);
+    position: relative;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: .35rem;
+    letter-spacing: 10px;
+    cursor: pointer;
+}
+
+.input button:hover {
+    transform: scale(1.05);
+    transition: all 250ms ease;
+}
+
+.input button:active {
+    transform: scale(0.95);
+    transition: all 250ms ease;
+}
+
+
+.pc_info a:hover,
+.pc_info i:hover {
+    color: var(--btnsecondary);
+    transition: all 350ms ease;
+}
+
+.socials {
+    display: grid;
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: .25rem;
+    background: var(--primary);
+}
+
+.socials #links {
+    display: grid;
+    position: absolute;
+    width: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: var(--text);
+    font-size: 1.5rem;
+    padding: 1.05rem;
+    top: 3rem;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 3);
+}
+
+#links i {
+    position: relative;
+    cursor: pointer;
+    padding: 2.5px;
+}
+
+#links i:hover {
+    transform: scale(1.05);
+    color: var(--text);
+    transition: all 350ms ease-in-out;
+}
+
+#links i:active{
+    transform: scale(0.75);
+    transition: all 350ms ease-in-out;
+}
+
+.input label {
+    font-size: 1rem;
+    color: var(--text);
+    position: relative;
+    font-weight: bold;
+    height: 2rem;
+    left: 0;
+}
+
+#signin {
+    height: 50%;
+    width: 50%;
+    padding: 0.5rem;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: var(--btnsecondary);
+    border-radius: 1rem;
+    border: none;
+    outline: #e5e6e8;
+}
+
+#signin button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1.5rem;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    background-color: var(--btnprimary);
+    color: var(--text);
+    font-size: 1.5rem;
+    border: none;
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (width > 600px) {
+    .links a img {
+        display: none;
+    }
+}
+
+#wrapper {
+    display: grid;
+    position: absolute;
+    bottom: var(--padding);
+    width: 100%;
+    height: 15vh;
+}
+
+.pc_info {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+
+}
+.pc_info p,
+.pc_info a,
+.pc_info h2 {
+    position: relative;
+    padding-inline: var(--padding);
+    padding-block-end: calc(var(--padding) / 2);
+}
+
+.pc_info h2 {
+    text-decoration: underline;
+}
+
+.pc_info a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.pc_info i {
+    color: var(--accent);
+    padding-inline-end: var(--padding);
+}
